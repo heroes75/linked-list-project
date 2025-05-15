@@ -153,6 +153,24 @@ class LinkedList {
         console.log(null)
         return null
     }
+
+    toString() {
+        let tmp = this.Head;
+        let str = "";
+        if(tmp === undefined) return str = "()";
+        while (tmp.next !== null) {
+            str += `( ${tmp.value} ) -> `
+            //console.log(str);
+            
+            tmp = tmp.next
+        }
+        console.log(str + `( ${tmp.value} ) -> null`)
+        return str += `( ${tmp.value} ) -> null`
+    }
+
+    insertAt(value, index) {
+
+    }
 }
 
 let list = new LinkedList();
@@ -180,7 +198,8 @@ list.pop();
 list.size();
 list.contains("value");
 list.find("value6");
+list.toString();
 
 console.log(list);
-console.log(list.Head.next.next);
+//console.log(list.Head.next.next);
 console.log(list.Head.next);
